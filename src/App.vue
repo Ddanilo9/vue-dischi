@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <MainComponent msg="Welcome to Your Vue.js App"/>
+    <HeaderComponent/>
+    <MainContent></MainContent>
   </div>
 </template>
 
 <script>
-import MainComponent from './components/MainComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+import MainContent from './components/MainContent.vue'
 
 export default {
   name: 'App',
   components: {
-    MainComponent
-  }
+    HeaderComponent,
+    MainContent,
+}
 }
 </script>
 
 <style lang="scss">
-#app {
 
-}
 </style>
