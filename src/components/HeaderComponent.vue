@@ -1,6 +1,6 @@
 <template>
   <div>
-   <h1>TITOLO</h1>
+   <h1>VUE-DISCHI</h1>
    </div>
 </template>
 
@@ -22,5 +22,7 @@ export default {
   @import '../styles/general.scss';
 h1{
   text-align: center;
+  padding: 20px 0;
+  color: white;
 }
 </style>

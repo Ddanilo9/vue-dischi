@@ -19,5 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+  @import '../src/styles/general.scss';
+#app{
+  background-color: rgba(30,45,59,255);
+}
 </style>
