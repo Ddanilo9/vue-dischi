@@ -1,7 +1,7 @@
 <template>
     <div>
      <div class="container grid">
-        <div v-for="(disco, i) in listaDischi" :key="i" class="card">
+        <div v-for="(disco, i) in selectG" :key="i" class="card">
           <CardComponent :info="disco"></CardComponent>
         </div>
      </div>
@@ -15,9 +15,30 @@
   
   export default {
     name: 'MainContent',
+    props: {
+      find:{
+        type: String,
+        default: ''
+      }
+    },
     data(){
       return{
-        listaDischi: []
+        listaDischi: [],
+        // genereSelezionato:''
+      }
+    },
+    computed: {
+      selectG (){
+        return this.listaDischi.filter((el) => {
+          let genere = el.genre.toLowerCase()
+          let find = this.find
+
+          if (genere.includes(find)) {
+            return true
+          }
+          return false
+
+        })
       }
     },
     created() {
@@ -39,8 +60,8 @@
   .grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-column-gap: 40px;
+    grid-row-gap: 15px;
         .card{
             background-color: rgba(46,58,70,255);
             color: white;

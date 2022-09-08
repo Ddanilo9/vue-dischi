@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderComponent/>
-    <MainContent></MainContent>
+    <HeaderComponent @search="onSearch"/>
+    <MainContent :find="findProp"></MainContent>
   </div>
 </template>
 
@@ -11,9 +11,19 @@ import MainContent from './components/MainContent.vue'
 
 export default {
   name: 'App',
+  data(){
+    return{
+      findProp:''
+    }
+  },
   components: {
     HeaderComponent,
     MainContent,
+},
+methods: {
+  onSearch(data) {
+   this.findProp= data
+  }
 }
 }
 </script>
