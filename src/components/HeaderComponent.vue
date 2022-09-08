@@ -1,26 +1,30 @@
 <template>
-  <div>
+  <header>
    <h1>VUE-DISCHI</h1>
    <label for="genere">Choose a genre</label>
-    <select name="genere" id="genere">
+    <select v-model="cerca" @change="$emit('find', cerca)" name="genere" id="genere">
+      <option value="">All</option>
       <option value="rock">Rock</option>
       <option value="pop">Pop</option>
       <option value="metal">Metal</option>
       <option value="jazz">Jazz</option>
     </select>
-  <br><br>
-  <input type="submit" value="Submit" @click="$emit('find', find)">
-   </div>
+   </header>
 </template>
 
 <script>
 
-
+// $emit('find', find)
 export default {
   name: 'MainContent',
   data(){
     return {
-      find: ''
+      cerca: ''
+    }
+  },
+  methods: {
+    test() {
+      console.log(this.cerca)
     }
   },
   props: {
@@ -33,9 +37,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   @import '../styles/general.scss';
-h1{
-  text-align: center;
-  padding: 20px 0;
-  color: white;
-}
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-bottom: 10px;
+      h1{
+        text-align: center;
+        padding: 20px 0;
+        
+      }
+  }
+
 </style>

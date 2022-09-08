@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent @search="onSearch"/>
+    <HeaderComponent @find="onSearch"/>
     <MainContent :find="findProp"></MainContent>
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
 },
 methods: {
   onSearch(data) {
+    // console.log('avviso')
    this.findProp= data
   }
 }
